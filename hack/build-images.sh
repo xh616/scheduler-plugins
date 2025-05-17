@@ -42,13 +42,13 @@ fi
 
 cd "${SCRIPT_ROOT}"
 
-${BUILDER} build \
+${BUILDER} -n k8s.io build \
            -f ${SCHEDULER_DIR}/Dockerfile \
            --build-arg ARCH=${ARCH} \
            --build-arg RELEASE_VERSION=${RELEASE_VERSION} \
            -t ${REGISTRY}/${IMAGE} .
-${BUILDER} build \
-           -f ${CONTROLLER_DIR}/Dockerfile \
-           --build-arg ARCH=${ARCH} \
-           --build-arg RELEASE_VERSION=${RELEASE_VERSION} \
-           -t ${REGISTRY}/${CONTROLLER_IMAGE} .
+#${BUILDER} -n k8s.io build \
+#           -f ${CONTROLLER_DIR}/Dockerfile \
+#           --build-arg ARCH=${ARCH} \
+#           --build-arg RELEASE_VERSION=${RELEASE_VERSION} \
+#           -t ${REGISTRY}/${CONTROLLER_IMAGE} .

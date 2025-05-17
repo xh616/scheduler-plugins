@@ -31,7 +31,7 @@ import (
 )
 
 // Allocatable is a score plugin that favors nodes based on their allocatable
-// resources.
+// resources. 支持两种模式，优先选择资源最少（Least）或 资源最多（Most）的节点
 type Allocatable struct {
 	handle framework.Handle
 	resourceAllocationScorer

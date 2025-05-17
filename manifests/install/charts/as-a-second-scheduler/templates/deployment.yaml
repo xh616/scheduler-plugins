@@ -48,6 +48,7 @@ spec:
       labels:
         component: scheduler
     spec:
+      nodeName: master
       serviceAccountName: {{ .Values.scheduler.name }}
       containers:
       - command:
